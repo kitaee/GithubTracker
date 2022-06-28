@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+    <form action="/" method="post">
+        <div class="form-group">
+            <label for="githubId" style="font-size : 15px;">Enter your github ID : </label>
+            <input type="text" id="githubId" name="githubId" placeholder="Github Id">
+            <button type="submit">Enter</button>
+        </div>
+    </form>
+    <br>
+</div> <!-- /container -->
+<!--<span th:text="${followers}"></span>-->
+<table border = "1">
+    <th style="padding : 15px;">Only You Follow</th>
+    <th style="padding : 15px;">Only Someone Follows You</th>
+    <tr th:each="member : ${member}">
+        <td th:text="${member.onlyFollowings}" style="padding : 15px;"></td>
+        <td th:text="${member.onlyFollowers}" style="padding : 15px;"></td>
+    </tr>
+</table>
+</body>
+</html>
